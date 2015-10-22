@@ -1,0 +1,572 @@
+
+@font-face {
+font-family: 'Circe';
+font-style: normal;
+font-weight: normal;
+src: local('Circe'), url('/font/CRC55.woff') format('woff');
+}
+
+html,
+body {
+    font-family: 'Circe';
+    height: 100%;
+}
+
+.thumbnail{
+    padding: 0;
+    border: none;
+    background-color: #669999;
+}
+
+.caption{
+    color: #ffffff !important;
+}
+
+.no-pad{
+    padding: 0 !important;
+}
+
+.no-margin{
+    margin: 0 !important;
+}
+
+ul{
+    padding: 0;
+}
+
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+.main{
+  width:100%;
+  min-height:650px;
+  background: url(/src/1.png) no-repeat center center; 
+    background-size: cover;
+}
+
+.main-title{
+  text-align:center;
+  margin-top: 50px;
+    color:#663366;
+}
+
+.main .navigation{
+  margin-top:40px;
+}
+
+.main .navigation ul{
+  width:255px;
+}
+
+.main .navigation li{
+  list-style:none;
+  font-size:22px;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+
+.main .navigation li:hover{
+    border:2px solid #66CC66;
+    color: #66CC66;
+}
+
+
+
+.main .navigation a{
+  color:black;
+    text-decoration: none;
+}
+
+.main-contacts{
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    padding: 0 15px;
+}
+
+@media screen and (max-width: 440px) {
+    .col-xs-4{
+        text-align: center;
+        width:100% !important;
+    }
+}
+
+.second{
+    width:100%;
+    min-height:650px;
+    background: url(/src/2.png) no-repeat center center; 
+    background-size: cover;
+    padding-bottom: 40px;
+}
+
+.second .navigation {
+    height: 40px;
+    background-color: #663366;
+    padding: 10px 0;
+}
+
+
+
+.second .navigation ul {
+    display: table;
+    width: 100%;
+}
+
+.second .navigation a{
+     display: block;
+     color: white;
+     text-decoration: none;
+     font-size: 16px;
+     text-align: center;
+}
+
+.second .navigation a:hover{
+     color:#66CC66;
+}
+
+.second .navigation li {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.second h3{
+    color:white;
+}
+.second .auto{
+    position: relative;
+    margin:10px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.second .auto img{
+    position: absolute;
+    bottom: 3px;
+}
+
+.second .tbl{
+    display:table;
+    overflow:auto;
+    width: 100%;
+    height: 100%;
+}
+
+.second .tbl-cell{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+.sedan{
+    height: 190px;
+    background-color: #6CC167;
+    font-size: 40px;
+}
+
+.sedan img{
+    width: 50%;
+    right: 10px;
+}
+
+
+.offroad{
+    height: 245px;
+    background-color: #669999;
+    font-size: 25px;
+}
+
+.offroad img{
+    width: 55%;
+    left: 10px;
+}
+
+.micro{
+    background-color: #ffffff;
+    height: 140px;
+    font-size: 29px;
+}
+
+.micro img{
+    width: 25%;
+    left: 10px;
+}
+
+.limo{
+    background-color: #669999;
+    height: 40px;
+    font-size: 20px;
+}
+
+.limo img{
+    width: 30%;
+    right: 10px;
+}
+
+.cabri{
+    height: 180px;
+    background-color: #6CC167;
+    font-size: 30px;
+}
+
+.cabri img{
+    width: 40%;
+    left: 10px;
+}
+
+.retro{
+    height: 55px;
+    background-color: #ffffff;
+    font-size: 20px;
+}
+
+.retro img{
+    width: 22%;
+    right: 10px;
+}
+
+#autos{
+    background-color: #ffffff;
+    position: relative;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+#autos p{
+    font-size: 20px;
+    margin: 5px auto;
+}
+
+#autos img, #autos p{
+    cursor: pointer;
+    width:80%;
+    
+}
+
+#close, #close_item{
+    position: absolute;
+    top: -30px;
+    color: white;
+    right: 0;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#close_item{
+    top: 25px;
+    right: 15px;
+}
+
+#carousel-example-generic{
+    padding-top: 5px;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+    max-height: 500px;
+}
+
+
+
+.form{
+    height: 380px;
+    margin: 10px 0;
+    background-color: #fff;
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 15px;
+  overflow-y:scroll;
+}
+
+.form input{
+    background-color: #669999;
+    width:90%;
+    margin-bottom: 15px; 
+}
+form p{
+    margin-bottom: 15px;
+}
+
+.form button{
+    text-align: center;
+    padding: 10px;
+    background-color: #669999; 
+    color:#ffffff;
+    width:48%;
+}
+
+.button{
+    margin: 10px 0;
+    padding: 15px 5px;
+    height: 55px;
+    background-color: #663366;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.responses{
+    min-height: 200px;
+}
+
+.about{
+    position: relative;
+    width:100%;
+    min-height:650px;
+    background: url(/src/3.png) no-repeat center center; 
+    background-size: cover;
+}
+
+.about h1{
+    font-weight: 900;
+    margin:40px 0;
+    color: black;
+    text-transform: uppercase;
+}
+
+.about-us{
+    background-color: white;
+    opacity: 0.85;
+    border:4px solid #669966;
+    padding: 30px 60px;
+    color: #663366;
+    margin-bottom: 100px;
+    }
+
+
+@media screen and (max-width: 768px) {
+    .about-us{
+    padding: 20px 5px; 
+    font-size: 15px;
+    }
+
+.form{
+    padding: 15px 40px;
+}
+
+}
+
+@media screen and (min-width: 768px) {
+    .about-us{
+    padding: 30px 60px;
+    font-size: 23px;
+    }
+.form{
+    padding: 15px 15px;
+}
+
+}
+
+.about-us ul{
+    padding-left: 25px;
+}
+
+.special{
+    position: relative;
+    width:100%;
+    min-height:650px;
+    background: url(/src/4.png) no-repeat center center; 
+    background-size: cover;
+}
+
+.special h1{
+    color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    .special .row{
+    padding: 40px 10px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .special .row{
+    padding: 40px 3%;
+    }
+
+}
+
+
+
+.special .caption li{
+    list-style: none;
+}
+
+
+.responses{
+    padding: 0 20px;
+}
+
+
+
+.responses .response{
+     color: #66CC66;
+    
+}
+
+
+@media screen and (max-width: 768px) {
+    .responses .response{
+  display:inline-block;
+  vertical-align:middle;
+    width:100%;
+    font-size:16px;
+    }
+    #carousel-responses{
+    padding: 10px 0;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .responses .response{
+    font-size: 18px;
+    width:70%;
+    top:20px;
+    float:left;
+    position:relative;
+    }
+
+    #carousel-responses{
+    padding: 10px 40px;
+    }
+
+}
+
+
+
+#carousel-responses{
+    width:85%;
+    margin: 0 auto;
+}
+
+#carousel-responses img{    
+    float: right;
+    max-width: 30%;
+    max-height: 200px;
+    overflow: hidden;
+    
+}
+
+
+
+.carousel-control.right, 
+.carousel-control.left {
+    background-image: none;
+    width:20px;
+    height: 40px;
+    top:50%;
+    color:#663366;
+    opacity: 1;
+}
+
+.carousel-control.right:hover, 
+.carousel-control.left:hover {
+    opacity: 0.7;
+}
+
+#carousel-responses .carousel-control.right{
+    right:-40px;
+}
+
+#carousel-responses .carousel-control.left{
+    left:-40px;
+}
+
+#auto_desc{
+  color: #ffffff;
+    font-size: 18px;
+    width: 75%;
+    margin: 0 auto;
+}
+
