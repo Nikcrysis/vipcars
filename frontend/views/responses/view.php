@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model app\models\Responses */
 
@@ -32,8 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'text:ntext',
             'vk_id',
-            'photo_url:url',
         ],
     ]) ?>
+  
+  <?php if(isset($model->photo_url)):?>  
+  <div class="col-sm-4 text-center">
+          <img class="img-responsive" src="<?=Url::to('@web/src/response/') . $model->photo_url?>">
+          </div>
+  <?php endif; ?>
 
 </div>

@@ -124,8 +124,21 @@ class ResponsesController extends Controller
      */
     public function actionUpdate($id)
     {
+      
+       $fileName = 'file';
         $model = $this->findModel($id);
+      $imgs = \yii\web\UploadedFile::getInstancesByName($fileName);
+      if (count($imgs)>0){
+        $img = $imgs[0];
+                $mysqlName = time().'_'. $img->name;
+          $url = getcwd() . '/src/response/' . $mysqlName ;
+                $kaboom = explode(".", $img->tempName); // Split file name into an array using the dot
+                $fileExt = end($kaboom); // Now target the last array element to get the file extension
+                self::ak_img_resize($img->tempName, $url, 200, 300, $fileExt);
+                chmod($url, 0755);
 
+        $model->photo_url = $mysqlName;
+    }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -163,4 +176,5 @@ class ResponsesController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+  
 }

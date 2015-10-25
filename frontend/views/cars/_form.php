@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+  use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Cars */
@@ -29,7 +30,16 @@ use yii\widgets\ActiveForm;
         ); ?>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
-
+  <div class="row">
+  <?php
+    foreach ($model->photos as $photo) {
+        echo '<div class="col-sm-4 text-center">
+          <a href="/cars/delete-photo?id='. $photo->id .'">Удалить</a>
+          <img class="img-responsive" src="' . Url::to('@web/src/upload/') . $photo->url . '">
+          </div>';
+    }
+  ?>
+  </div>
     <input type="file" name="file[]" multiple>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

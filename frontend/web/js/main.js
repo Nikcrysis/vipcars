@@ -8,7 +8,17 @@ $('.auto').on('click', function(){
         type: 'GET',
         url: '/site/get-cars',
         data: {'cat' : cat},
+    beforeSend: function() {
+      $('#cat_row .col-sm-9').css({
+        'opacity' : 0.5,
+        });
+      $('.preloader').show();
+    }, 
         success: function(data) {
+          $('#cat_row .col-sm-9').css({
+        'opacity' : 1,
+        });
+           $('.preloader').hide();
             $('#cats').hide();
       $('#autos').html(data.result);
       $('#cat').fadeIn();
@@ -39,11 +49,21 @@ $('#autos').on('click', 'img, p', function(){
         type: 'GET',
         url: '/site/get-car-photos',
         data: {'carId' : id},
+       beforeSend: function() {
+      $('#cat_row .col-sm-9').css({
+        'opacity' : 0.5,
+        });
+         $('#cat_row .preloader').show();
+    }, 
         success: function(html) {
+          $('#cat_row .col-sm-9').css({
+        'opacity' : 1,
+        });
+          $('.preloader').hide();
             $('#item .carousel-inner').html(html.result);
             $('#auto_desc').html(html.p);
             $('#item .carousel-indicators').html(html.dots);
-            $('#car_select').val(html.carName);
+            $('#order_car_select').val(html.carName);
             function async(callback) {
                 $('.carousel').carousel();
                 callback();
@@ -78,22 +98,49 @@ $(function() {
 
 function OrderCar() {
   var text= '';
-  text += 'Поступил заказ на авто ' + $('#orderForm #order_car_select').val() +'\n';
-    text += 'От ' + $('#orderForm input[name=name]').val() +'\n';
-    text += 'Телефон: ' + $('#orderForm input[name=phone]').val() +'\n';
-    text += 'Дата: ' + $('#orderForm input[name=date]').val();
-    if ($('input[name=time]:checked').val() == 'yes'){
+  var auto = $('#orderForm #order_car_select').val();
+  var name = $('#orderForm input[name=name]').val();
+  var phone = $('#orderForm input[name=phone]').val();
+  var date = $('#orderForm input[name=date]').val();
+  var time = $('input[name=time]:checked').val();
+ 
+  if ((name !== '') && (phone !== '') && (date !== '') && (time !== '')){
+   
+  text += 'Поступил заказ на авто ' + auto +'\n';
+    text += 'От ' + name  +'\n';
+    text += 'Телефон: ' + phone +'\n';
+    text += 'Дата: ' + date;
+    if ( time == 'yes'){
       text += ' точная.';
         } else {
          text += ' неточная.'; 
         }
-  console.log(text );
   $.ajax({
         type: 'POST',
         url: '/site/order-car',
     data: {'text' : text},
         success: function(data) {
-          console.log(data);
+          alert('Заявка принята!');
         }
     });
+} else {
+ alert('Заполните все поля!'); 
 }
+}
+
+function equalHeight(group) {    
+    var tallest = 0;    
+    group.each(function() {       
+        var thisHeight = $(this).height();       
+        if(thisHeight > tallest) {          
+            tallest = thisHeight;       
+        }    
+    });    
+    group.each(function() { $(this).height(tallest); });
+} 
+
+$(document).ready(function() {   
+    equalHeight($(".caption, #carousel-responses .item")); 
+});
+
+

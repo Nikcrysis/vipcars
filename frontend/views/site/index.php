@@ -13,7 +13,7 @@ $this->title = 'Автопрокат в Калиниграде';
 </script>
     <div class="container" style="height: 100%;">
         <div class="main-title">
-            <h1>Автопрокат в Калиниграде</h1>
+            <h1>Аренда элитных автомобилей с водителем в Калининграде</h1>
         </div>
         <div class="row navigation">
         <div class="col-sm-5">
@@ -90,13 +90,14 @@ $this->title = 'Автопрокат в Калиниграде';
         <div class="navigation">
             <ul>
                 <li class="col-xs-3"><a href="#main">Главная</a></li>
+                <li class="col-xs-3"><a href="#special">Акции</a></li>
                 <li class="col-xs-3"><a href="#responses">Отзывы</a></li>
                 <li class="col-xs-3"><a href="#about">О нас</a></li>
-                <li class="col-xs-3"><a href="#special">Акции</a></li>
             </ul>
         </div>
         <div class="row" id="cat_row"> 
         <div class="col-sm-9">
+          <img src="<?=Url::to('@web/src/icons/preloader.gif')?>" class="preloader">
         <div id="cats">
         <h3 class="text-center">Выберите категорию</h3>
              <div class="col-sm-4 no-pad">
@@ -187,11 +188,11 @@ $this->title = 'Автопрокат в Калиниграде';
                   <?php endforeach;?>
                   </select>
                     <p>Имя: </p> <input type="input" name="name">
-                    <p>Номер телефона:</p> <input type="phone" name="phone">
+                    <p>Номер телефона:</p> <input type="tel" pattern="(\+?\d[- .]*){7,13}" name="phone">
                     <p>День аренды автомобиля:</p> <input type="date" name="date">
                     <p>Это точная дата?</p>
                     <input type="radio" name="time" style="width:auto" value="yes"> Да<Br>
-                    <input type="radio" name="time" style="width:auto" value="no"> Примерная<Br>
+                    <input type="radio" name="time" style="width:auto" value="no" checked="checked"> Примерная<Br>
                 </form>
             </div>
           <div class="button" onclick="OrderCar()" style="cursor:pointer">

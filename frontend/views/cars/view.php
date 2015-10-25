@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Cars */
@@ -33,11 +34,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'name:ntext',
             'category',
             'description:ntext',
-            [
-                'label' => 'Photo',
-                'value' => $model->photos[0]->url,
-            ],
         ],
     ]) ?>
+  
+  <?php
+    foreach ($model->photos as $photo) {
+        echo '<div class="col-sm-4"><img class="img-responsive" src="' . Url::to('@web/src/upload/') . $photo->url . '"></div>';
+    }
+  ?>
 
 </div>

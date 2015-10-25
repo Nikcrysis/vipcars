@@ -123,9 +123,29 @@ class CarsController extends Controller
      */
     public function actionUpdate($id)
     {
+        $fileName = 'file';
+        $imgs = \yii\web\UploadedFile::getInstancesByName($fileName);
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+          
+          if(count($imgs > 0)){
+            foreach ($imgs as $img) {
+                $mysqlName = time().'_'. $img->name;
+                $url = getcwd() . '/src/upload/' . $mysqlName ;
+                $kaboom = explode(".", $img->tempName); // Split file name into an array using the dot
+                $fileExt = end($kaboom); // Now target the last array element to get the file extension
+                self::ak_img_resize($img->tempName, $url, 600, 394, $fileExt);
+              //if (rename($img->tempName, $url));
+                chmod($url, 0755);
+
+                $photo = new Photos;
+                $photo->car_id = $model->id;
+                $photo->url = $mysqlName;
+                $photo->save();
+                
+              }
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -167,7 +187,9 @@ class CarsController extends Controller
         }
     }
   
-  public function actionTest(){
-    var_dump(getcwd() . '/src/upload/');
+  public function actionDeletePhoto($id){
+    $photo = Photos::findOne($id);
+      $photo->delete();
+    return $this->redirect(Yii::$app->request->referrer);
   }
 }

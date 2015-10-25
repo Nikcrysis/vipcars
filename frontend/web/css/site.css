@@ -12,6 +12,14 @@ body {
     height: 100%;
 }
 
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+
 .thumbnail{
     padding: 0;
     border: none;
@@ -41,7 +49,7 @@ ul{
 }
 
 .wrap > .container {
-    padding: 70px 15px 20px;
+    padding: 0 15px;
 }
 
 .footer {
@@ -118,6 +126,10 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
+}
+
+strike{
+ color:#663366; 
 }
 
 .main{
@@ -218,6 +230,9 @@ a.desc:after {
 .second h3{
     color:white;
 }
+
+
+
 .second .auto{
     position: relative;
     margin:10px;
@@ -284,7 +299,7 @@ a.desc:after {
 }
 
 .limo img{
-    width: 30%;
+    width: 25%;
     right: 10px;
 }
 
@@ -295,7 +310,7 @@ a.desc:after {
 }
 
 .cabri img{
-    width: 40%;
+    width: 35%;
     left: 10px;
 }
 
@@ -568,5 +583,14 @@ form p{
     font-size: 18px;
     width: 75%;
     margin: 0 auto;
+}
+
+.preloader{
+  display:none;
+  position:absolute;
+  top:45%;
+  left:45%;
+  z-index:50;
+  width:120px;
 }
 
