@@ -17,6 +17,7 @@ use yii\helpers\Html;
 use app\models\Photos;
 use yii\helpers\Url;
 use app\models\Responses;
+use app\models\Special;
 
 /**
  * Site controller
@@ -80,6 +81,7 @@ class SiteController extends Controller
 
         $responses = Responses::find()->all();
         $autos = Cars::find()->all();
+        $special = Special::find()->all();
         $cars = [];
       foreach ($autos as $auto) {
         if (!in_array($auto->name, $cars)){
@@ -89,6 +91,7 @@ class SiteController extends Controller
         return $this->render('index', [
             'responses' => $responses,
             'cars' => $cars,
+            'special' => $special,                 
             ]);
     }
 

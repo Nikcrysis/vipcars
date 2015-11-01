@@ -26,10 +26,13 @@ $this->title = 'Автопрокат в Калиниграде';
         </div>
         </div>
         <div class="main-contacts container">
-        <div class="row">
-            <div class="col-xs-4">Vipcars_39@mail.ru</div>
-            <div class="col-xs-4"><img class="img-responsive" style="height:20px;    margin: 0 auto;" src="<?= Url::to('@web/src/logo.png') ?>"></div>
-            <div class="col-xs-4 text-right">+7 906 219 99 17</div>
+        <div class="row">  
+            <div class="col-xs-4">
+              <p>8 (40152) 999999</p>
+              <p>+7 906 219 99 17</p>
+            </div>
+            <div class="col-xs-4 pad-top"><img class="img-responsive" style="height:30px;    margin: 0 auto;" src="<?= Url::to('@web/src/logo.png') ?>"></div>
+            <div class="col-xs-4 text-right pad-top">Vipcars_39@mail.ru</div>
         </div>
         </div>
     </div>
@@ -39,47 +42,23 @@ $this->title = 'Автопрокат в Калиниграде';
     <div class="container">
         <h1 class="text-center">На эти автомобили действуют специальные цены: </h1>
         <div class="row">
-            <div class="col-sm-4 col-xs-12">
+          
+          
+          <?php foreach($special as $spec): ?>
+                    <div class="col-sm-4 col-xs-12">
                 <div class="thumbnail">
-                  <img src="<?= Url::to('@web/src/special/3 Mersedes S500 LONG W221.jpg') ?>" alt="...">
+                  <img src="<?= Url::to('@web/src/special/' . $spec->photo_url) ?>" alt="...">
                   <div class="caption">
-                    <h3>Mersedes S500 W221</h3>
+                    <h3><?= $spec->name ?></h3>
                     <ul>
-                        <li>Цена: <strike>2000 руб/час</strike> от 1700 руб/час</li>
-                        <li>Количество авто: 3</li>
-                        <li>Количество мест: 4+1</li>
-                        <li>Описание: Светлый салон; обогрев, охлаждение, массаж и регулировка всех сидений</li>
+                        <li>Цена: <strike><?= $spec->old_price ?> руб/час</strike> от <?= $spec->new_price ?> руб/час</li>
+                        <li>Количество мест: <?= $spec->seats ?></li>
+                        <li>Описание: <?= $spec->description ?></li>
                     </ul>
                   </div>
                 </div>
             </div>
-            <div class="col-sm-4 col-xs-12">
-                <div class="thumbnail">
-                  <img src="<?= Url::to('@web/src/special/1 bmw x5.jpg') ?>" alt="...">
-                  <div class="caption">
-                    <h3>BMW X5 E53</h3>
-                    <ul>
-                        <li>Цена: <strike>1100 руб/час</strike> от 800 руб/час</li>
-                        <li>Количество авто: 9</li>
-                        <li>Количество мест: 4+1</li>
-                        <li>Описание: черный</li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-                <div class="thumbnail">
-                  <img src="<?= Url::to('@web/src/special/2 lexus.jpg') ?>" alt="...">
-                  <div class="caption">
-                    <h3>Lexus RX330 </h3>
-                    <ul>
-                        <li>Цена: <strike>1400  руб/час</strike> от 1100  руб/час</li>
-                        <li>Количество мест: 4+1</li>
-                        <li>Описание: Бежевый салон </li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 
@@ -176,11 +155,13 @@ $this->title = 'Автопрокат в Калиниграде';
         </div> 
         <h3 class="text-center">Заполните форму заказа</h3>
         <div class="col-sm-3">
-            <div class="form Scrollable">
+            <div class="form Scrollable" style="
+    opacity: 0.82;
+">
                 <form id="orderForm">
                     <p>Автомобиль:</p>
-                  <select id="order_car_select" style="width:90%">
-                      <option disabled>Выберите авто</option>
+                  <select id="order_car_select" style="width:100%; margin-bottom: 20px;     background-color: #CC9966;">
+                      <option disabled  selected="selected">Выберите авто</option>
                       <?php foreach($cars as $car):?>
                       <option value = "<?= $car ?>"> 
                       <?= $car ?>
@@ -190,9 +171,9 @@ $this->title = 'Автопрокат в Калиниграде';
                     <p>Имя: </p> <input type="input" name="name">
                     <p>Номер телефона:</p> <input type="tel" pattern="(\+?\d[- .]*){7,13}" name="phone">
                     <p>День аренды автомобиля:</p> <input type="date" name="date">
-                    <p>Это точная дата?</p>
+                    <!--<p>Это точная дата?</p>
                     <input type="radio" name="time" style="width:auto" value="yes"> Да<Br>
-                    <input type="radio" name="time" style="width:auto" value="no" checked="checked"> Примерная<Br>
+                    <input type="radio" name="time" style="width:auto" value="no" checked="checked"> Примерная<Br> -->
                 </form>
             </div>
           <div class="button" onclick="OrderCar()" style="cursor:pointer">
@@ -237,7 +218,7 @@ $this->title = 'Автопрокат в Калиниграде';
 
 <section id="about" class="about">
     <div class="container">
-        
+      <div class="row">  
         <div class="col-sm-10 col-sm-offset-1">
             <h1>О Нас:</h1>
             <div class="about-us">
@@ -249,12 +230,13 @@ $this->title = 'Автопрокат в Калиниграде';
                 <li>Аккуратные водители.</li>
                 <li>Более семи лет обслуживания свадеб на рынке.</li>
             </ul>
-            Усли вам нужны красивые автомобили с водителями
+            Если вам нужны красивые автомобили с водителями
             на торжественное мероприятие, свадьбу, vip-трансферы, 
             vip-такси, встречу делового партнера или просто для 
             поездки по достопримечательностям города
             Калининграда, вы можете арендовать у нас.
             </div>
+        </div>
         </div>
     </div>
     <div class="main-contacts container">

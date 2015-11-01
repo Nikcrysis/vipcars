@@ -23,7 +23,7 @@ body {
 .thumbnail{
     padding: 0;
     border: none;
-    background-color: #669999;
+    background-color: #996633;
 }
 
 .caption{
@@ -129,25 +129,25 @@ a.desc:after {
 }
 
 strike{
- color:#663366; 
+ color:#000000; 
 }
 
 .main{
   width:100%;
-  min-height:650px;
-  background: url(/src/1.png) no-repeat center center; 
+  min-height:420px;
+  position:relative;
+  background: url(/src/1.png) no-repeat right center; 
     background-size: cover;
 }
 
 .main-title{
   text-align:center;
-  margin-top: 50px;
-    color:#663366;
+  color:#ffffff;
+  text-shadow: black 0px 0px 5px;
 }
 
-.main .navigation{
-  margin-top:40px;
-}
+
+
 
 .main .navigation ul{
   width:255px;
@@ -158,11 +158,15 @@ strike{
   font-size:22px;
     padding-left: 10px;
     padding-right: 40px;
+  
+   color: #fff;
+    /*text-shadow: -1px 0 black, 0 1px black, 2px 0 black, 0 -1px black;*/
+  text-shadow: black 0px 0px 5px;
 }
 
 .main .navigation li:hover{
-    border:2px solid #66CC66;
-    color: #66CC66;
+    border:2px solid #CC9966;
+    color: #CC9966;
 }
 
 
@@ -176,30 +180,45 @@ strike{
     color: white;
     font-size: 16px;
     position: absolute;
-    bottom: 20px;
     left: 10px;
     right: 10px;
     padding: 0 15px;
 }
 
-@media screen and (max-width: 440px) {
-    .col-xs-4{
+@media screen and (max-width: 470px) {
+    .main-contacts .col-xs-4{
         text-align: center;
         width:100% !important;
+        padding-top:0;
+    }
+
+    .main-contacts p{
+        margin: 0;
+    }
+}
+
+
+
+@media screen and (min-width: 470px) {
+    .main-contacts .col-xs-4{
+        padding-top:15px;
     }
 }
 
 .second{
     width:100%;
     min-height:650px;
-    background: url(/src/2.png) no-repeat center center; 
-    background-size: cover;
-    padding-bottom: 40px;
+    //background: url(/src/buffalo-skin.png) center center; 
+    //background-size: cover;
+    background: url(/src/blend-70.png);
+    background: url(/src/637_image_large2.png);
+  
+  padding-bottom: 40px;
 }
 
 .second .navigation {
     height: 40px;
-    background-color: #663366;
+    background-color: #000000;
     padding: 10px 0;
 }
 
@@ -219,7 +238,7 @@ strike{
 }
 
 .second .navigation a:hover{
-     color:#66CC66;
+     color:#CC9966;
 }
 
 .second .navigation li {
@@ -234,6 +253,7 @@ strike{
 
 
 .second .auto{
+    color: #000000;
     position: relative;
     margin:10px;
     font-weight: 900;
@@ -260,7 +280,7 @@ strike{
 }
 .sedan{
     height: 190px;
-    background-color: #6CC167;
+    background-color: #CC9966;
     font-size: 40px;
 }
 
@@ -272,7 +292,7 @@ strike{
 
 .offroad{
     height: 245px;
-    background-color: #669999;
+    background-color: #996633;
     font-size: 25px;
 }
 
@@ -282,7 +302,7 @@ strike{
 }
 
 .micro{
-    background-color: #ffffff;
+    background-color: #FFCC99;
     height: 140px;
     font-size: 29px;
 }
@@ -293,42 +313,41 @@ strike{
 }
 
 .limo{
-    background-color: #669999;
+    background-color: #996633;
     height: 40px;
     font-size: 20px;
 }
 
 .limo img{
-    width: 25%;
+    width: 28%;
     right: 10px;
 }
 
 .cabri{
     height: 180px;
-    background-color: #6CC167;
+    background-color: #CC9966;
     font-size: 30px;
 }
 
 .cabri img{
-    width: 35%;
+    width: 45%;
     left: 10px;
 }
 
 .retro{
     height: 55px;
-    background-color: #ffffff;
+    background-color: #FFCC99;
     font-size: 20px;
 }
 
 .retro img{
-    width: 22%;
+    width: 30%;
     right: 10px;
 }
 
 #autos{
     background-color: #ffffff;
     position: relative;
-    padding: 40px 30px;
     text-align: center;
 }
 
@@ -377,12 +396,12 @@ strike{
     font-size: 18px;
     font-weight: 700;
     padding: 15px 15px;
-  overflow-y:scroll;
+  /*overflow-y:scroll;*/
 }
 
 .form input{
-    background-color: #669999;
-    width:90%;
+    background-color: #CC9966;
+    width:100%;
     margin-bottom: 15px; 
 }
 form p{
@@ -401,9 +420,9 @@ form p{
     margin: 10px 0;
     padding: 15px 5px;
     height: 55px;
-    background-color: #663366;
+    background-color: #ffffff;
     text-align: center;
-    color: white;
+    color: #000000;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 700;
@@ -424,16 +443,17 @@ form p{
 .about h1{
     font-weight: 900;
     margin:40px 0;
-    color: black;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
 .about-us{
     background-color: white;
     opacity: 0.85;
-    border:4px solid #669966;
+    border:4px solid #996633;
+    border-radius: 4px;
     padding: 30px 60px;
-    color: #663366;
+    color: #000000;
     margin-bottom: 100px;
     }
 
@@ -445,7 +465,7 @@ form p{
     }
 
 .form{
-    padding: 15px 40px;
+    padding: 15px 60px;
 }
 
 }
@@ -469,8 +489,10 @@ form p{
     position: relative;
     width:100%;
     min-height:650px;
-    background: url(/src/4.png) no-repeat center center; 
-    background-size: cover;
+    //background: url(/src/4.png) no-repeat center center; 
+    //background-size: cover;
+    //background: linear-gradient(to top, #FFFFFF, #666666);
+  background: url(/src/dark-grey-subtle-old-paper-v26315.png)
 }
 
 .special h1{
@@ -482,12 +504,54 @@ form p{
     padding: 40px 10px;
     }
 
+.main-title{
+  margin-top: -10px;
+}
+
+h1{
+  font-size:24px; 
+}
+
+.main .navigation {
+  margin-top: 15px;
+}
+
+.pad-top{
+ padding-top:0px; 
+}
+
+.main-contacts{
+    bottom: 1%;
+}
+
+#autos{
+  padding: 20px 0;
+}
+
 }
 
 @media screen and (min-width: 768px) {
     .special .row{
     padding: 40px 3%;
     }
+.main-title{
+  margin-top: 30px;
+}
+.main .navigation{
+  margin-top:80px;
+}
+
+.pad-top{
+ padding-top:35px !important; 
+}
+
+.main-contacts{
+    bottom: 4%;
+}
+
+#autos{
+  padding: 40px 30px;
+}
 
 }
 
@@ -505,7 +569,7 @@ form p{
 
 
 .responses .response{
-     color: #66CC66;
+     color: #996633;
     
 }
 
@@ -561,7 +625,8 @@ form p{
     width:20px;
     height: 40px;
     top:50%;
-    color:#663366;
+    margin-top:-20px; 
+    color:#000000;
     opacity: 1;
 }
 
@@ -581,15 +646,17 @@ form p{
 #auto_desc{
   color: #ffffff;
     font-size: 18px;
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
 }
 
 .preloader{
   display:none;
   position:absolute;
-  top:45%;
-  left:45%;
+  top:50%;
+  left:50%;
+  margin-left:-60px;
+  margin-top:-60px;
   z-index:50;
   width:120px;
 }

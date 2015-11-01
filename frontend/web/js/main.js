@@ -102,19 +102,19 @@ function OrderCar() {
   var name = $('#orderForm input[name=name]').val();
   var phone = $('#orderForm input[name=phone]').val();
   var date = $('#orderForm input[name=date]').val();
-  var time = $('input[name=time]:checked').val();
+  //var time = $('input[name=time]:checked').val();
  
-  if ((name !== '') && (phone !== '') && (date !== '') && (time !== '')){
+  if ((name !== '') && (phone !== '') && (date !== '')){
    
   text += 'Поступил заказ на авто ' + auto +'\n';
     text += 'От ' + name  +'\n';
     text += 'Телефон: ' + phone +'\n';
     text += 'Дата: ' + date;
-    if ( time == 'yes'){
+    /*if ( time == 'yes'){
       text += ' точная.';
         } else {
          text += ' неточная.'; 
-        }
+        }*/
   $.ajax({
         type: 'POST',
         url: '/site/order-car',
