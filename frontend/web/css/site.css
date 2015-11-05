@@ -183,6 +183,8 @@ strike{
     left: 10px;
     right: 10px;
     padding: 0 15px;
+    text-shadow: black 0px 0px 5px;
+    //background: rgba(97, 95, 87, 0.14);
 }
 
 @media screen and (max-width: 470px) {
@@ -247,7 +249,7 @@ strike{
 }
 
 .second h3{
-    color:white;
+    color: #000000;
 }
 
 
@@ -444,6 +446,7 @@ form p{
     font-weight: 900;
     margin:40px 0;
     color: #ffffff;
+    text-shadow: black 0px 0px 5px;
     text-transform: uppercase;
 }
 
@@ -538,7 +541,9 @@ h1{
   margin-top: 30px;
 }
 .main .navigation{
-  margin-top:80px;
+  /*margin-top:80px;*/
+    position: absolute;
+    bottom: 30%;
 }
 
 .pad-top{
@@ -644,7 +649,7 @@ h1{
 }
 
 #auto_desc{
-  color: #ffffff;
+  color: #000000;
     font-size: 18px;
     width: 80%;
     margin: 0 auto;

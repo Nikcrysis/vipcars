@@ -28,7 +28,7 @@ $this->title = 'Автопрокат в Калиниграде';
         <div class="main-contacts container">
         <div class="row">  
             <div class="col-xs-4">
-              <p>8 (40152) 999999</p>
+              <p>8 (40152) 751-444</p>
               <p>+7 906 219 99 17</p>
             </div>
             <div class="col-xs-4 pad-top"><img class="img-responsive" style="height:30px;    margin: 0 auto;" src="<?= Url::to('@web/src/logo.png') ?>"></div>
@@ -126,8 +126,7 @@ $this->title = 'Автопрокат в Калиниграде';
             </div>
 
             <div id="item" style="display:none;">
-            <h3 class="text-center">Просмотр фото</h3>
-            <div id="auto_desc"></div>  
+            <h3 class="text-center">Просмотр фото</h3> 
             <div id="close_item"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="0">
 
@@ -151,6 +150,7 @@ $this->title = 'Автопрокат в Калиниграде';
                     <span class="sr-only">Next</span>
                   </a>
                 </div>
+                <div id="auto_desc"></div> 
             </div>
         </div> 
         <h3 class="text-center">Заполните форму заказа</h3>
